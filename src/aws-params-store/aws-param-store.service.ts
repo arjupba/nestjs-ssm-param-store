@@ -7,7 +7,7 @@ import { AWS_PARAMS_STORE_MODULE_OPTIONS } from './contstants';
 @Injectable()
 export class AWSParamStoreService {
   private readonly logger = new Logger(AWSParamStoreService.name);
-  private readonly client = new SSMClient({ region: 'us-east-1' });
+  private readonly client = new SSMClient({ region: process.env.AWS_REGION });
 
   constructor(
     @Inject(AWS_PARAMS_STORE_MODULE_OPTIONS)
